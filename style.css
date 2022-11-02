@@ -1,0 +1,70 @@
+body {
+    padding:0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(227, 133, 11, 0.51);
+}
+body.correct {
+    --ans:var(--correct)
+}
+
+body.wrong {
+    --ans:var(--wrong)
+}
+
+.main-box {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.score{
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium';
+}
+#player-score{
+    color: rgb(231, 151, 3);
+}
+#total-score{
+    color: rgb(0, 0, 0);
+}
+.btn-grid {
+    display: grid;
+    gap: 10px;
+    margin: 20px;
+}
+
+.btn{
+    background-color: rgba(255, 153, 0, 0.978);
+    border-color: rgb(216, 122, 6);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: antiquewhite;
+    outline: none;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.btn:hover{
+border-color: black;
+
+}
+
+
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide{
+    display: none;
+}
