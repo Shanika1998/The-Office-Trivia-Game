@@ -1,3 +1,4 @@
+//intialization 
 const submitBtn = document.getElementById('submit');
 const nextButton = document.getElementById('next-button');
 const questionBox = document.getElementById('question-box');
@@ -7,10 +8,11 @@ const falseBtn = document.getElementById('False')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const playerScore = document.getElementById('player-score');
 const totalScore = document.getElementById('total-score');
-
+// Starting score 
 let currentQuestion = 0;
-var score =0;
+let score =0;
 
+//Questions for the trivia
 const questions = [
     {
         question:"Who dates Pam's mother?",
@@ -39,10 +41,10 @@ const questions = [
     },
 
 ]
-
+//Adding an event to buttons
 nextButton.addEventListener('click', next)
 submitBtn.addEventListener('click',submit)
-
+//Beginning the Quiz, inputting questions and answer choices into the question element and answer buttons
 function beginQuiz(){
     currentQuestion =0
     totalScore.innerHTML = questions.length;
@@ -54,7 +56,7 @@ function beginQuiz(){
                 score++
             }
         }
-        playerScore.innerHTML = score;
+        playerScore.innerText = score++;
         if(currentQuestion<2){
             next()
         }
@@ -66,7 +68,7 @@ function beginQuiz(){
                 score++
             }
         }
-        playerScore.innerHTML = score
+        playerScore.innerText= score
         if(currentQuestion<2){
             next()
         }
@@ -76,18 +78,24 @@ beginQuiz()
 
 function next() {
     currentQuestion++;
-    if(currentQuestion >= 2) {
+    if(currentQuestion >= 3) {
         nextButton.classList.add("hide");
     }
     questionElement.innerHTML = questions[currentQuestion].question;
     trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
     trueBtn.onclick = () => {
+
         if(questions[currentQuestion].answers[0].answer) {
+
             if(score < 3) {
+
                 score++;
+
             }
+
         }
-        playerScore.innerHTML = score;
+
+        playerScore.innerText = score++;
         if(currentQuestion < 2) {
             next();
         }
@@ -97,11 +105,11 @@ function next() {
     falseBtn.onclick = () => {
         if(questions[currentQuestion].answers[1].answer) {
             if(score < 3) {
-                score++;
+                score;
             }
  
         }
-        playerScore.innerHTML = score;
+        playerScore.innerText = score;
         if(currentQuestion < 2) {
             next();
         }
@@ -111,7 +119,11 @@ function next() {
         nextButton.classList.add("hide");
         submitBtn.classList.add("hide");
         trueBtn.classList.add("hide");
-        falseBtn.classList.add("hide");   
-        questionElement.innerHTML ="Congratulations on submitting the Quiz!"
+        falseBtn.classList.add("hide"); 
+        if(playerScore === totalScore){
+            questionElement.innerHTML ="Congratulations on submitting the Quiz! 100%!"
+        }else {
+            questionElement.innerHTML = "Better luck next"
+        }
      }
 
