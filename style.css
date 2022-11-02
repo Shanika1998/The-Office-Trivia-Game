@@ -6,14 +6,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: rgba(227, 133, 11, 0.51);
-}
-body.correct {
-    --ans:var(--correct)
-}
-
-body.wrong {
-    --ans:var(--wrong)
+    background-image: url(OIP.jpeg) ;
 }
 
 .main-box {
