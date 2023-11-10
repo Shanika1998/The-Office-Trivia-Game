@@ -23,12 +23,7 @@ body {
     font-weight: bold;
     font-family: 'Franklin Gothic Medium';
 }
-#player-score{
-    color: rgb(231, 151, 3);
-}
-#total-score{
-    color: rgb(0, 0, 0);
-}
+
 .btn-grid {
     display: grid;
     gap: 10px;
